@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantumTrade Tools</title>
+  <meta name="description" content="A futuristic animated trading tools dashboard with calculators for average, stop loss, risk, lot size, P/L, compounding, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbit bg-orbit-1"></div>
+  <div class="bg-orbit bg-orbit-2"></div>
+  <div class="grid-overlay"></div>
+
+  <header class="topbar glass">
+    <div>
+      <p class="eyebrow">QuantumTrade Tools</p>
+      <h1>Futuristic Trading Calculator Dashboard</h1>
+      <p class="subtitle">Animated, responsive, and built for fast calculations.</p>
+    </div>
+    <div class="topbar-actions">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="calculation">Calculators</button>
+      <button class="chip" data-filter="risk">Risk Tools</button>
+      <button class="chip" id="themeToggle">Neon Mode</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar glass">
+      <div class="brand-card">
+        <div class="brand-mark">Q</div>
+        <div>
+          <h2>QuantumTrade</h2>
+          <p>Tools Hub</p>
+        </div>
+      </div>
+
+      <nav class="tool-nav">
+        <a href="#average">Average</a>
+        <a href="#stoploss">Stop Loss</a>
+        <a href="#risk">Risk</a>
+        <a href="#lotsize">Lot Size</a>
+        <a href="#rr">Risk Reward</a>
+        <a href="#profitloss">Profit / Loss</a>
+        <a href="#compound">Compounding</a>
+        <a href="#margin">Margin</a>
+        <a href="#drawdown">Drawdown</a>
+        <a href="#breakeven">Breakeven</a>
+        <a href="#pip">Pip Value</a>
+        <a href="#winrate">Win Rate</a>
+      </nav>
+    </aside>
+
+    <section class="dashboard">
+      <div class="stats-row">
+        <article class="stat glass">
+          <span>Live Tools</span>
+          <strong>12</strong>
+        </article>
+        <article class="stat glass">
+          <span>Theme</span>
+          <strong>Futuristic</strong>
+        </article>
+        <article class="stat glass">
+          <span>Updates</span>
+          <strong>Real-time</strong>
+        </article>
+      </div>
+
+      <div class="cards">
+        <section class="tool-card glass" id="average" data-category="calculation">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Calculator</p>
+              <h3>Average Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <label>Numbers (comma separated)</label>
+          <input id="avgNumbers" placeholder="10, 20, 30, 40" />
+          <label>Weighted values (optional, same count)</label>
+          <input id="avgWeights" placeholder="1, 2, 3, 4" />
+          <div class="result" id="avgResult">Average will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="stoploss" data-category="risk">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Risk Tool</p>
+              <h3>Stop Loss Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Entry Price</label>
+              <input id="slEntry" type="number" step="any" placeholder="2500" />
+            </div>
+            <div>
+              <label>Risk Distance</label>
+              <input id="slDistance" type="number" step="any" placeholder="20" />
+            </div>
+            <div>
+              <label>Direction</label>
+              <select id="slSide">
+                <option value="long">Long</option>
+                <option value="short">Short</option>
+              </select>
+            </div>
+            <div>
+              <label>Units</label>
+              <select id="slUnit">
+                <option value="price">Price points</option>
+                <option value="percent">Percent</option>
+              </select>
+            </div>
+          </div>
+          <div class="result" id="slResult">Stop loss level will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="risk" data-category="risk">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Risk Tool</p>
+              <h3>Risk Management Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Account Balance</label>
+              <input id="riskBalance" type="number" step="any" placeholder="10000" />
+            </div>
+            <div>
+              <label>Risk % per Trade</label>
+              <input id="riskPercent" type="number" step="any" placeholder="1" />
+            </div>
+          </div>
+          <div class="result" id="riskResult">Risk amount will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="lotsize" data-category="risk">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Position Tool</p>
+              <h3>Lot Size Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Risk Amount</label>
+              <input id="lotRisk" type="number" step="any" placeholder="100" />
+            </div>
+            <div>
+              <label>Stop Loss (pips)</label>
+              <input id="lotStop" type="number" step="any" placeholder="20" />
+            </div>
+            <div>
+              <label>Pip Value per Lot</label>
+              <input id="lotPipValue" type="number" step="any" placeholder="10" />
+            </div>
+            <div>
+              <label>Account Currency</label>
+              <input id="lotCurrency" placeholder="USD" />
+            </div>
+          </div>
+          <div class="result" id="lotResult">Lot size will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="rr" data-category="calculation">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Calculator</p>
+              <h3>Risk / Reward Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Entry</label>
+              <input id="rrEntry" type="number" step="any" placeholder="2500" />
+            </div>
+            <div>
+              <label>Stop Loss</label>
+              <input id="rrStop" type="number" step="any" placeholder="2490" />
+            </div>
+            <div>
+              <label>Target</label>
+              <input id="rrTarget" type="number" step="any" placeholder="2520" />
+            </div>
+            <div>
+              <label>Direction</label>
+              <select id="rrSide">
+                <option value="long">Long</option>
+                <option value="short">Short</option>
+              </select>
+            </div>
+          </div>
+          <div class="result" id="rrResult">Risk / Reward will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="profitloss" data-category="calculation">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Calculator</p>
+              <h3>Profit / Loss Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Entry</label>
+              <input id="plEntry" type="number" step="any" placeholder="2500" />
+            </div>
+            <div>
+              <label>Exit</label>
+              <input id="plExit" type="number" step="any" placeholder="2520" />
+            </div>
+            <div>
+              <label>Quantity</label>
+              <input id="plQty" type="number" step="any" placeholder="1" />
+            </div>
+            <div>
+              <label>Multiplier</label>
+              <input id="plMultiplier" type="number" step="any" placeholder="1" />
+            </div>
+          </div>
+          <div class="result" id="plResult">Profit / Loss will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="compound" data-category="calculation">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Calculator</p>
+              <h3>Compounding Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Starting Capital</label>
+              <input id="cmpStart" type="number" step="any" placeholder="1000" />
+            </div>
+            <div>
+              <label>Monthly Return %</label>
+              <input id="cmpReturn" type="number" step="any" placeholder="5" />
+            </div>
+            <div>
+              <label>Months</label>
+              <input id="cmpMonths" type="number" step="any" placeholder="12" />
+            </div>
+            <div>
+              <label>Contribution / Month</label>
+              <input id="cmpContrib" type="number" step="any" placeholder="0" />
+            </div>
+          </div>
+          <div class="result" id="cmpResult">Compounding value will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="margin" data-category="risk">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Risk Tool</p>
+              <h3>Margin Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Position Value</label>
+              <input id="marginValue" type="number" step="any" placeholder="10000" />
+            </div>
+            <div>
+              <label>Leverage</label>
+              <input id="marginLev" type="number" step="any" placeholder="100" />
+            </div>
+          </div>
+          <div class="result" id="marginResult">Margin will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="drawdown" data-category="risk">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Risk Tool</p>
+              <h3>Drawdown Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Peak Equity</label>
+              <input id="ddPeak" type="number" step="any" placeholder="12000" />
+            </div>
+            <div>
+              <label>Current Equity</label>
+              <input id="ddCurrent" type="number" step="any" placeholder="9500" />
+            </div>
+          </div>
+          <div class="result" id="ddResult">Drawdown will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="breakeven" data-category="calculation">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Calculator</p>
+              <h3>Breakeven Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Entry Price</label>
+              <input id="beEntry" type="number" step="any" placeholder="2500" />
+            </div>
+            <div>
+              <label>Fees / Spread</label>
+              <input id="beFees" type="number" step="any" placeholder="2" />
+            </div>
+          </div>
+          <div class="result" id="beResult">Breakeven will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="pip" data-category="calculation">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Calculator</p>
+              <h3>Pip Value Calculator</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Lot Size</label>
+              <input id="pipLot" type="number" step="any" placeholder="1" />
+            </div>
+            <div>
+              <label>Pip Size</label>
+              <input id="pipSize" type="number" step="any" placeholder="0.0001" />
+            </div>
+            <div>
+              <label>Price Move</label>
+              <input id="pipMove" type="number" step="any" placeholder="0.0010" />
+            </div>
+            <div>
+              <label>Contract Size</label>
+              <input id="pipContract" type="number" step="any" placeholder="100000" />
+            </div>
+          </div>
+          <div class="result" id="pipResult">Pip value will appear here.</div>
+        </section>
+
+        <section class="tool-card glass" id="winrate" data-category="risk">
+          <div class="card-head">
+            <div>
+              <p class="tool-label">Risk Tool</p>
+              <h3>Win Rate / Expectancy</h3>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>Wins</label>
+              <input id="wrWins" type="number" step="any" placeholder="55" />
+            </div>
+            <div>
+              <label>Losses</label>
+              <input id="wrLosses" type="number" step="any" placeholder="45" />
+            </div>
+            <div>
+              <label>Average Win</label>
+              <input id="wrAvgWin" type="number" step="any" placeholder="120" />
+            </div>
+            <div>
+              <label>Average Loss</label>
+              <input id="wrAvgLoss" type="number" step="any" placeholder="80" />
+            </div>
+          </div>
+          <div class="result" id="wrResult">Win rate will appear here.</div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
