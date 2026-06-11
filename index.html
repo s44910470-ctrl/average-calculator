@@ -24,40 +24,35 @@
       </div>
     </div>
     <div class="topbar-actions">
+      <span class="session-chip" id="sessionChip">Guest mode</span>
       <button class="chip active" data-filter="all">All</button>
       <button class="chip" data-filter="calculation">Calculators</button>
       <button class="chip" data-filter="risk">Risk Tools</button>
       <button class="chip" id="themeToggle">Neon Mode</button>
+      <a class="chip link-chip" href="login.html">Login</a>
+      <a class="chip link-chip" href="signup.html">Sign up</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-copy glass">
+      <div class="hero-copy glass floating">
         <p class="eyebrow">Futuristic SaaS Platform</p>
         <h2>Trade faster with animated calculators, risk tools, and a sleek dashboard.</h2>
         <p class="hero-text">QuantumTrade Tools is designed as a premium SaaS experience for traders who want speed, clarity, and beautiful interfaces in one place.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#app">Launch App</a>
           <a class="btn btn-secondary" href="#pricing">View Pricing</a>
+          <a class="btn btn-secondary" href="signup.html">Start Free Trial</a>
         </div>
         <div class="hero-metrics">
-          <div class="metric-card">
-            <strong>12+</strong>
-            <span>Built-in tools</span>
-          </div>
-          <div class="metric-card">
-            <strong>Live</strong>
-            <span>Auto calculations</span>
-          </div>
-          <div class="metric-card">
-            <strong>Mobile</strong>
-            <span>Responsive SaaS UI</span>
-          </div>
+          <div class="metric-card"><strong>12+</strong><span>Built-in tools</span></div>
+          <div class="metric-card"><strong>Live</strong><span>Auto calculations</span></div>
+          <div class="metric-card"><strong>Mobile</strong><span>Responsive SaaS UI</span></div>
         </div>
       </div>
 
-      <div class="hero-panel glass">
+      <div class="hero-panel glass floating">
         <div class="panel-header">
           <span class="status-dot"></span>
           <span>Live dashboard</span>
@@ -68,22 +63,10 @@
           <div class="chart-line chart-line-3"></div>
         </div>
         <div class="panel-grid">
-          <div class="mini-stat">
-            <span>Latency</span>
-            <strong>&lt; 50ms</strong>
-          </div>
-          <div class="mini-stat">
-            <span>Risk score</span>
-            <strong>Optimized</strong>
-          </div>
-          <div class="mini-stat">
-            <span>Theme</span>
-            <strong>Neon Glass</strong>
-          </div>
-          <div class="mini-stat">
-            <span>Mode</span>
-            <strong>SaaS</strong>
-          </div>
+          <div class="mini-stat"><span>Latency</span><strong>&lt; 50ms</strong></div>
+          <div class="mini-stat"><span>Risk score</span><strong>Optimized</strong></div>
+          <div class="mini-stat"><span>Theme</span><strong>Neon Glass</strong></div>
+          <div class="mini-stat"><span>Mode</span><strong>SaaS</strong></div>
         </div>
       </div>
     </section>
@@ -94,18 +77,9 @@
         <h3>Built like a modern product, not just a calculator page.</h3>
       </div>
       <div class="feature-grid">
-        <article class="feature-card glass">
-          <h4>Fast calculations</h4>
-          <p>Inputs update instantly and keep the workflow smooth.</p>
-        </article>
-        <article class="feature-card glass">
-          <h4>Futuristic design</h4>
-          <p>Glassmorphism, neon glow, motion, and a premium trading feel.</p>
-        </article>
-        <article class="feature-card glass">
-          <h4>Risk-first tools</h4>
-          <p>Position sizing, stop loss, drawdown, and risk reward in one place.</p>
-        </article>
+        <article class="feature-card glass"><h4>Fast calculations</h4><p>Inputs update instantly and keep the workflow smooth.</p></article>
+        <article class="feature-card glass"><h4>Futuristic design</h4><p>Glassmorphism, neon glow, motion, and a premium trading feel.</p></article>
+        <article class="feature-card glass"><h4>Risk-first tools</h4><p>Position sizing, stop loss, drawdown, and risk reward in one place.</p></article>
       </div>
     </section>
 
@@ -252,9 +226,24 @@
         <h3>Simple SaaS-style plans</h3>
       </div>
       <div class="pricing-grid">
-        <article class="price-card glass"><h4>Starter</h4><strong>Free</strong><p>Basic calculators and dashboard.</p></article>
-        <article class="price-card glass featured"><h4>Pro</h4><strong>$9/mo</strong><p>All tools, animations, and premium UI.</p></article>
-        <article class="price-card glass"><h4>Elite</h4><strong>$29/mo</strong><p>Advanced analytics and future integrations.</p></article>
+        <article class="price-card glass">
+          <h4>Starter</h4>
+          <strong>Free</strong>
+          <p>Basic calculators and dashboard.</p>
+          <button class="btn btn-secondary plan-btn" data-plan="Starter">Choose Starter</button>
+        </article>
+        <article class="price-card glass featured">
+          <h4>Pro</h4>
+          <strong>$9/mo</strong>
+          <p>All tools, animations, and premium UI.</p>
+          <button class="btn btn-primary plan-btn" data-plan="Pro">Choose Pro</button>
+        </article>
+        <article class="price-card glass">
+          <h4>Elite</h4>
+          <strong>$29/mo</strong>
+          <p>Advanced analytics and future integrations.</p>
+          <button class="btn btn-secondary plan-btn" data-plan="Elite">Choose Elite</button>
+        </article>
       </div>
     </section>
 
