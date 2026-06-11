@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantumTrade Tools — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-shell glass">
+    <section class="auth-visual floating">
+      <p class="eyebrow">QuantumTrade Tools</p>
+      <h1>Welcome back</h1>
+      <p class="hero-text">Sign in to access your dashboard, saved preferences, and selected subscription plan.</p>
+      <div class="hero-metrics">
+        <div class="metric-card"><strong>Secure</strong><span>Local session simulation</span></div>
+        <div class="metric-card"><strong>Fast</strong><span>Instant login state</span></div>
+        <div class="metric-card"><strong>Smart</strong><span>Saved preferences</span></div>
+      </div>
+      <div class="auth-actions">
+        <a class="btn btn-secondary" href="index.html">Back home</a>
+        <a class="btn btn-secondary" href="signup.html">Create account</a>
+      </div>
+    </section>
+
+    <section class="auth-card glass">
+      <p class="eyebrow">Login</p>
+      <h2>Sign in</h2>
+      <p id="loginMessage" class="result">Enter your account details.</p>
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" />
+
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="••••••••" />
+
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+      <p class="auth-footer">No account yet? <a href="signup.html">Create one</a></p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
